@@ -15,21 +15,19 @@ import com.springjava.dslist.services.GameService;
 @RestController
 @RequestMapping(value = "/games")
 public class GameController {
-    
-@Autowired
-private GameService gameService;
 
+    @Autowired
+    private GameService gameService;
 
-@GetMapping
-public List<GameMinDTO> findAll(){
-    List<GameMinDTO> result = gameService.findAll();
-    return result;
-}
+    @GetMapping
+    public List<GameMinDTO> findAll() {
+        List<GameMinDTO> result = gameService.findAll();
+        return result;
+    }
 
-@GetMapping(value = "/{id}")
-public GameDTO findById(@PathVariable Long id){
-    return gameService.findById(id);
-}
-
+    @GetMapping(value = "/{id}")
+    public GameDTO findById(@PathVariable Long id) {
+        return gameService.findById(id);
+    }
 
 }
